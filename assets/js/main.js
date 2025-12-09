@@ -26,14 +26,23 @@
    * Mobile nav toggle
    */
   const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
+  const mobileNav = document.getElementById('navmenu-mobile');
 
-  function mobileNavToogle() {
-    document.querySelector('body').classList.toggle('mobile-nav-active');
-    mobileNavToggleBtn.classList.toggle('bi-list');
-    mobileNavToggleBtn.classList.toggle('bi-x');
+  function mobileNavToggle() {
+    // اضافه/حذف کلاس active روی منوی موبایل
+    mobileNav.classList.toggle('active');
+
+    // تغییر آیکن بین list و x
+    if (mobileNavToggleBtn.classList.contains('bi-list')) {
+      mobileNavToggleBtn.classList.remove('bi-list');
+      mobileNavToggleBtn.classList.add('bi-x');
+    } else {
+      mobileNavToggleBtn.classList.remove('bi-x');
+      mobileNavToggleBtn.classList.add('bi-list');
+    }
   }
-  mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
 
+  mobileNavToggleBtn.addEventListener('click', mobileNavToggle);
   /**
    * Hide mobile nav on same-page/hash links
    */

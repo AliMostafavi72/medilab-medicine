@@ -607,6 +607,22 @@ p {
     }
 }
 
+/* منوی موبایل اولیه مخفی */
+#navmenu-mobile {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    z-index: 999;
+}
+
+/* وقتی منو باز است */
+#navmenu-mobile.active {
+    max-height: 500px; /* ارتفاع تقریبی منو */
+    opacity: 1;
+}
+
+
 /*--------------------------------------------------------------
 # Global Footer
 --------------------------------------------------------------*/
